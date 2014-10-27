@@ -1,0 +1,33 @@
+#!/bin/sh
+ 
+# find node
+NODE=$(which node)
+ 
+# if it cannot find a node installation
+if [[ -z $NODE ]]; then
+	#NodeJS is not installed
+	echo "Please install NodeJS first."
+	exit 1
+fi
+ 
+# make sure jslint is installed
+if [[ ! -d ~/.npm/jslint ]]; then
+	#install jslint locally
+	echo "Please install jslint (global )first."
+	exit 1
+fi
+ 
+# run JSLint before every commit, don't commit until
+# JSLint is OK
+for file in $(git diff --name-only --cached | egrep '.js$');
+do
+	$NODE ./node_modules/jslint/bin/jslint.js $file
+	# If the result of the previous command is NOT zero
+	if [ $? -ne 0 ]; then
+	 echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+	 exit 1
+	fi
+done
+ 
+# Everything is ok
+exit 0
