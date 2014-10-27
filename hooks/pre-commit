@@ -1,5 +1,5 @@
-#!/bin/sh
- 
+#!/bin/bash
+exit 0 
 # find node
 NODE=$(which node)
  
@@ -21,13 +21,16 @@ fi
 # JSLint is OK
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
-	$NODE ./node_modules/jslint/bin/jslint.js $file
+	echo "--- $file"
+	$NODE ~/.npm/jslint/bin/jslint.js $file
 	# If the result of the previous command is NOT zero
 	if [ $? -ne 0 ]; then
 	 echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
 	 exit 1
 	fi
 done
+
+exit 1
  
 # Everything is ok
 exit 0

@@ -4,3 +4,5 @@ function power(x) {
 }
 
 console.log(power(2));
+
+
