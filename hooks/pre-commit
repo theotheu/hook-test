@@ -22,6 +22,10 @@ git diff --name-only | egrep '.js$' | while read FILE; do
 done
 echo DONE
 exit 0
+
+
+
+
  
 # run JSLint before every commit, don't commit until
 # JSLint is OK
