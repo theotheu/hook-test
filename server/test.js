@@ -5,4 +5,14 @@ function power(x) {
 
 console.log(power(2));
 
+<<<<<<< HEAD
 // now pushing to development
+=======
+
+power(3);
+
+
+
+
+
+>>>>>>> development
