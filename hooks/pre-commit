@@ -1,53 +1,42 @@
-#!/bin/bash
+#!/bin/sh
 
 # find node
 NODE=$(which node)
- 
+JSLINT=./test/static-analyzer/node_modules/jslint
+BRANCH=`git branch | awk '/\*/ { print $2; }'`
+
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
 	#NodeJS is not installed
 	echo "Please install NodeJS first."
 	exit 1
 fi
- 
+
 # make sure jslint is installed
-if [[ ! -d ~/.npm/jslint ]]; then
+if [[ ! -d $JSLINT ]]; then
 	#install jslint locally
-	echo "Please install jslint (global )first."
+	echo "Please install jslint first."
+	echo "  jslint is expected to be installed in test/static-analyzer/."
 	exit 1
 fi
 
-echo "Now checking for diffs..."
+# Commit and push always to development
+# Only commit to test, if static analysis is passed
+if [[ $BRANCH -eq "development" ]]; then
+	echo "Current branch is development. This will be committed."
+	exit 0
+fi
 
-git diff --name-only | while read FILE; do
-	echo "======== $FILE"
+for file in $(git diff --name-only --cached | egrep '.js$');
+do
+	echo "Verifying file $file"
+	$NODE $JSLINT/bin/jslint.js $file
+	if [ $? -ne 0 ]; then
+		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+		exit 1
+	fi
 done
-echo DONE
-
-git diff --name-only | egrep '.js$' | while read FILE; do
-	echo "======== $FILE"
-done
-echo DONE
 exit 0
 
-
-
-
- 
-# run JSLint before every commit, don't commit until
-# JSLint is OK
-for file in $(git diff --name-only | egrep '.js$');
-do
-	echo "--- $file"
-	#$NODE ~/.npm/jslint/bin/jslint.js $file
-	## If the result of the previous command is NOT zero
-	#if [ $? -ne 0 ]; then
-	# echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
-	# exit 1
-	#fi
-done
-
-exit 1
- 
 # Everything is ok
 exit 0

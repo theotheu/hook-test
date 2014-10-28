@@ -2,7 +2,7 @@
 
 git checkout development
 
-echo "// `date`" >> server/test.js
+echo "function fn`date +%Y%m%d%H%i%s`(){}" >> server/test.js
 echo "// `date`" >> README.md
 
 git commit -am "DEVELOPMENT: `date`"
