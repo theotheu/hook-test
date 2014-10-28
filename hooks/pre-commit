@@ -23,7 +23,7 @@ F=`git diff`
 
 echo "------> $F"
 
-git diff  | while read FILE; do
+$F | while read FILE; do
 	echo "======== $FILE"
 done
 
