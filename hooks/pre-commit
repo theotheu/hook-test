@@ -6,6 +6,8 @@ git diff --name-only | egrep '.js$' | while read FILE; do
         echo "======== $FILE"
 done
 
+exit 0
+
 # find node
 NODE=$(which node)
  
