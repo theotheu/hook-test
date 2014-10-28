@@ -23,7 +23,7 @@ echo "\n\n\nCurrent branch: $BRANCH\n\n\n"
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-if [[ $BRANCH -eq 'development' ]]; then
+if [[ $BRANCH='development' ]]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
 fi
