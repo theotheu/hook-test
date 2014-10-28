@@ -26,7 +26,7 @@ echo "\n\n\nCurrent branch: $BRANCH\n\n\n"
 # Only commit to test, if static analysis is passed
 echo "\n\n\n---\n\n\n$BRANCH;$DEV\n\n\n---\n\n\n"
 
-if [ $BRANCH -eq $DEV ]; then
+if [ $BRANCH = $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
 fi
