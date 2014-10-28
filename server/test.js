@@ -104,6 +104,11 @@ function fn2014102822i1414532921(){}
 function fn2014102822i1414533021(){}
 =======
 function fn2014102822i1414533080(){}
+<<<<<<< HEAD
 >>>>>>> development
 function fn2014102822i1414533106(){}
 function fn2014102822i1414533136(){}
+=======
+function fn2014102822i1414533219(){}
+>>>>>>> development
+function fn2014102822i1414533237(){}
