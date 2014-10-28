@@ -24,6 +24,12 @@ git diff --name-only --cached  | egrep '.js$' | while read FILE; do
         echo "=~=~=~=~=~=~=~= $FILE"
 done
 echo "Should have listed all changed files...\n\n\n\n"
+
+
+for file in $(git diff --name-only --cached | egrep '.js$');
+do
+	echo "-|-|- $file"
+done
 exit 0
 
 
