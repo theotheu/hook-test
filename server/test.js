@@ -15,4 +15,8 @@ power(3);
 
 
 
+<<<<<<< HEAD
+>>>>>>> development
+=======
+
 >>>>>>> development
