@@ -22,23 +22,4 @@ https://gist.github.com/pgpbpadilla/9999991
 11
 12
 13
-// di 28 okt 2014 20:54:38 CET
-// di 28 okt 2014 20:55:33 CET
-// di 28 okt 2014 20:57:46 CET
-// di 28 okt 2014 20:58:15 CET
-// di 28 okt 2014 20:59:27 CET
-// di 28 okt 2014 21:00:44 CET
-// di 28 okt 2014 21:10:53 CET
-// di 28 okt 2014 21:11:13 CET
-// di 28 okt 2014 21:12:38 CET
-// di 28 okt 2014 21:12:48 CET
-// di 28 okt 2014 21:13:41 CET
-// di 28 okt 2014 21:16:04 CET
-// di 28 okt 2014 21:17:49 CET
-// di 28 okt 2014 21:21:31 CET
-// di 28 okt 2014 21:22:18 CET
-// di 28 okt 2014 21:23:34 CET
-// di 28 okt 2014 21:24:30 CET
-// di 28 okt 2014 21:25:57 CET
-// di 28 okt 2014 21:27:27 CET
-// di 28 okt 2014 21:27:40 CET
+// di 28 okt 2014 21:28:30 CET

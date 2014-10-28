@@ -32,3 +32,4 @@ power(3);
 // di 28 okt 2014 21:25:57 CET
 // di 28 okt 2014 21:27:27 CET
 // di 28 okt 2014 21:27:40 CET
+// di 28 okt 2014 21:28:30 CET

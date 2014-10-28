@@ -19,6 +19,8 @@ fi
 
 echo "Now checking for diffs..."
 
+echo "pwd = `pwd`"
+
 git diff --name-only | while read FILE; do
 	echo "======== $FILE"
 done
