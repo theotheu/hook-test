@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # find node
 NODE=$(which node)
