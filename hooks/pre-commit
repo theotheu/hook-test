@@ -20,13 +20,18 @@ if [[ ! -d $JSLINT ]]; then
 	echo "  jslint is expected to be installed in test/static-analyzer/."
 	exit 1
 fi
-echo "\n\n\nCurrent branch: $BRANCH\n\n\n"
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
 
 if [ $BRANCH = $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
+	exit 0
+fi
+
+
+if [ $BRANCH != $DEV ]; then
+	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 	exit 0
 fi
 
