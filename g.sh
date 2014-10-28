@@ -6,7 +6,7 @@ echo "function fn`date +%Y%m%d%H%i%s`(){}" >> server/test.js
 
 git commit -am "DEVELOPMENT: `date`"
 
-#git push origin development
+git push origin development
 
 git checkout test
 
