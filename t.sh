@@ -15,7 +15,7 @@ git checkout test
 
 #git merge --no-edit development
 
-git merge --commit -am "MERGE: `date`" development
+git merge --commit -m "MERGE: `date`" development
 
 #git commit -am "TEST: `date`"
 
