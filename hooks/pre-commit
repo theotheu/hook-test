@@ -23,7 +23,7 @@ fi
 git diff --name-only | egrep '.js$' | while read FILE; do
         echo "=~=~=~=~=~=~=~= $FILE"
 done
-echo "Should have listed all changed files"
+echo "Should have listed all changed files...\n\n\n\n"
 exit 0
 
 
