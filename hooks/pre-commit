@@ -1,7 +1,5 @@
 #!/bin/bash
 
-exit 0
-
 # find node
 NODE=$(which node)
  
@@ -21,6 +19,10 @@ fi
 
 echo "Now checking for diffs..."
 
+git diff --name-only | while read FILE; do
+	echo "======== $FILE"
+done
+echo DONE
 
 git diff --name-only | egrep '.js$' | while read FILE; do
 	echo "======== $FILE"
