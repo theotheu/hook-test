@@ -1,5 +1,11 @@
 #!/bin/sh
 
+echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
+
+git diff --name-only | egrep '.js$' | while read FILE; do
+        echo "======== $FILE"
+done
+
 # find node
 NODE=$(which node)
  
@@ -23,7 +29,7 @@ F=`git diff`
 
 echo "------> $F"
 
-$F | while read FILE; do
+git diff --name-only | while read FILE; do
 	echo "======== $FILE"
 done
 
