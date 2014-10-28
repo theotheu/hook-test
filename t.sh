@@ -11,11 +11,11 @@ git push origin development
 
 git checkout test
 
-//git commit -am "MERGE: `date`"
+#git commit -am "MERGE: `date`"
 
 git merge development
 
-//git commit -am "TEST: `date`"
+#git commit -am "TEST: `date`"
 
 git push origin test
 
