@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "// `date`" >> server/test.js
+
 git commit -am "DEVELOPMENT: change to push 1) to development, 2) merge to test, 3) push to test"
 
 git push origin development
