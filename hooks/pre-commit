@@ -27,27 +27,6 @@ echo "Should have listed all changed files...\n\n\n\n"
 exit 0
 
 
-echo "Now checking for diffs..."
-
-F=`git diff`
-
-echo "------> $F"
-
-git diff --name-only –cached | while read FILE; do
-	echo "======== $FILE"
-done
-
-echo "Should have listed all changed files"
-exit 0
-
-git diff --name-only | egrep '.js$' | while read FILE; do
-	echo "======== $FILE"
-done
-
-
-
-
-
  
 # run JSLint before every commit, don't commit until
 # JSLint is OK
