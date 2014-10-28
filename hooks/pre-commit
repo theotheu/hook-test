@@ -19,6 +19,9 @@ if [[ ! -d ~/.npm/jslint ]]; then
 	exit 1
 fi
 
+echo "Now checking for diffs..."
+
+
 git diff --name-only | egrep '.js$' | while read FILE; do
 	echo "======== $FILE"
 done
