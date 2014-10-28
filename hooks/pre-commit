@@ -13,6 +13,14 @@ if [[ -z $NODE ]]; then
 fi
 
 
+# make sure jslint is installed
+if [[ ! -d ~/.npm/jslint ]]; then
+	#install jslint locally
+	echo "Please install jslint (global )first."
+	exit 1
+fi
+
+
 
 echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
 
@@ -22,12 +30,6 @@ done
 
 exit 0
 
-# make sure jslint is installed
-if [[ ! -d ~/.npm/jslint ]]; then
-	#install jslint locally
-	echo "Please install jslint (global )first."
-	exit 1
-fi
 
 echo "Now checking for diffs..."
 
