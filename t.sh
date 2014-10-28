@@ -13,7 +13,7 @@ git checkout test
 
 git commit -amend -m "MERGE: `date`"
 
-git merge development
+git merge --no-edit development
 
 #git commit -am "TEST: `date`"
 
