@@ -24,10 +24,14 @@ echo "\n\n\nCurrent branch: $BRANCH\n\n\n"
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-if [ $BRANCH=$DEV ]; then
+echo "\n\n\n---\n\n\n$BRANCH|$DEV\n\n\n---\n\n\n"
+
+if [ $BRANCH -eq $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
 fi
+
+exit 0
 
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
