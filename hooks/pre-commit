@@ -19,7 +19,7 @@ fi
 
 echo "Now checking for diffs..."
 
-F = `git diff --name-only`
+F=`git diff --name-only`
 
 echo "------> $F"
 
