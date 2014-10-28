@@ -20,7 +20,7 @@ fi
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
 	echo "=~=~=~=~=~=~=~= $file"
-	$NODE ./test/static-analyzer/jslint/bin/jslint.js $file
+	$NODE ./test/static-analyzer/node_modules/jslint/bin/jslint.js $file
 done
 exit 0
 
