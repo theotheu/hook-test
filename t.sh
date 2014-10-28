@@ -1,18 +1,21 @@
 #!/bin/bash
 
-echo "// `date`" >> server/test.js
+git checkout development
 
-git commit -am "DEVELOPMENT: change to push 1) to development, 2) merge to test, 3) push to test"
+echo "// `date`" >> server/test.js
+echo "// `date`" >> README.md
+
+git commit -am "DEVELOPMENT: `date`"
 
 git push origin development
 
 git checkout test
 
-git commit -am "MERGE: change to push 1) to development, 2) merge to test, 3) push to test"
+git commit -am "MERGE: `date`"
 
 git merge development
 
-git commit -am "TEST: change to push 1) to development, 2) merge to test, 3) push to test"
+git commit -am "TEST: `date`"
 
 git push origin test
 
