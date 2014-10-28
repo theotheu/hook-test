@@ -32,10 +32,7 @@ fi
 
 if [ $BRANCH != $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
-	exit 0
 fi
-
-exit 0
 
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
