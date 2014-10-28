@@ -17,15 +17,6 @@ if [[ ! -d ~/.npm/jslint ]]; then
 	exit 1
 fi
 
-
-#echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
-
-git diff --name-only --cached  | egrep '.js$' | while read FILE; do
-        echo "=~=~=~=~=~=~=~= $FILE"
-done
-echo "Should have listed all changed files...\n\n\n\n"
-
-
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
 	echo "=~=~=~=~=~=~=~= $file"
