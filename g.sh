@@ -10,8 +10,8 @@ git push origin development
 
 git checkout test
 
-git commit -am "MERGE: `date`"
 git merge --no-edit development
+git commit -am "MERGE: `date`"
 
 #git merge --commit -m "MERGE: `date`" development
 
