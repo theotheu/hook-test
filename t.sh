@@ -11,7 +11,7 @@ git push origin development
 
 git checkout test
 
-#git commit -am "MERGE: `date`"
+git commit -amend -m "MERGE: `date`"
 
 git merge development
 
