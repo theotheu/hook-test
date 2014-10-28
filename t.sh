@@ -9,6 +9,9 @@ git commit -am "DEVELOPMENT: `date`"
 
 git push origin development
 
+
+exit 0
+
 git checkout test
 
 #git commit -am "MERGE: `date`"
