@@ -21,6 +21,9 @@ for file in $(git diff --name-only --cached | egrep '.js$');
 do
 	echo "=~=~=~=~=~=~=~= $file"
 	$NODE ./test/static-analyzer/node_modules/jslint/bin/jslint.js $file
+	if [ $? -ne 0 ]; then
+		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+	fi
 done
 exit 0
 
