@@ -10,6 +10,9 @@ git push origin development
 
 git checkout test
 
+git fetch --all
+git reset --hard origin/test
+
 git merge --no-edit development
 git commit -am "MERGE: `date`"
 
