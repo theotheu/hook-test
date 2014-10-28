@@ -31,7 +31,7 @@ else
 	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 fi
 
-for file in $(git diff --name-only | egrep '.js$');
+for file in $(git diff --name-only --cached | egrep '.js$');
 do
 	echo "Verifying file $file"
 	$NODE $JSLINT/bin/jslint.js $file
