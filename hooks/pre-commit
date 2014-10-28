@@ -1,5 +1,5 @@
 #!/bin/bash
-exit 0
+
 # find node
 NODE=$(which node)
  
@@ -21,6 +21,7 @@ git diff --name-only | egrep '.js$' | while read FILE; do
 	echo "=== $FILE"
 done
 echo DONE
+exit 0
  
 # run JSLint before every commit, don't commit until
 # JSLint is OK
