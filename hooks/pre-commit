@@ -27,10 +27,7 @@ fi
 if [ $BRANCH = $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
-fi
-
-
-if [ $BRANCH != $DEV ]; then
+else
 	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 fi
 
