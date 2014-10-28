@@ -1,9 +1,7 @@
 #!/bin/sh
 
-
 # find node
 NODE=$(which node)
-
 
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
@@ -11,7 +9,6 @@ if [[ -z $NODE ]]; then
 	echo "Please install NodeJS first."
 	exit 1
 fi
-
 
 # make sure jslint is installed
 if [[ ! -d ~/.npm/jslint ]]; then
@@ -21,8 +18,7 @@ if [[ ! -d ~/.npm/jslint ]]; then
 fi
 
 
-
-echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
+#echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
 
 git diff --name-only | egrep '.js$' | while read FILE; do
         echo "=~=~=~=~=~=~=~= $FILE"
