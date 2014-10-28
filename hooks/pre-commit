@@ -3,6 +3,7 @@
 # find node
 NODE=$(which node)
 JSLINT=./test/static-analyzer/node_modules/jslint
+BRANCH=`git branch | awk '/\*/ { print $2; }'`
 
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
@@ -21,10 +22,6 @@ fi
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-BRANCH=`git branch | awk '/\*/ { print $2; }'`
-
-echo "BRANCH: $BRANCH"
-
 if [[ $BRANCH -eq "development" ]]; then
 	echo "Current branch is development. This will be committed."
 	exit 0
