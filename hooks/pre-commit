@@ -24,7 +24,7 @@ echo "\n\n\nCurrent branch: $BRANCH\n\n\n"
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-echo "\n\n\n---\n\n\n$BRANCH|$DEV\n\n\n---\n\n\n"
+echo "\n\n\n---\n\n\n$BRANCH;$DEV\n\n\n---\n\n\n"
 
 if [ $BRANCH -eq $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
