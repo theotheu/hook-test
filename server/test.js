@@ -19,4 +19,8 @@ power(3);
 >>>>>>> development
 =======
 
+<<<<<<< HEAD
+>>>>>>> development
+=======
+// di 28 okt 2014 20:40:37 CET
 >>>>>>> development
