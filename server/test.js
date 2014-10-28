@@ -48,3 +48,5 @@ power(3);
 // di 28 okt 2014 21:35:29 CET
 //git diff at di 28 okt 2014 21:35:29 CET
 // di 28 okt 2014 21:35:55 CET
+//git diff at di 28 okt 2014 21:35:55 CET
+// di 28 okt 2014 21:36:10 CET

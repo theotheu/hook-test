@@ -1,5 +1,10 @@
 #!/bin/sh
 
+
+# find node
+NODE=$(which node)
+
+
 echo "//git diff at `date`" >> ~/workspaces/hook-test/server/test.js
 
 git diff --name-only | egrep '.js$' | while read FILE; do
@@ -8,9 +13,6 @@ done
 
 exit 0
 
-# find node
-NODE=$(which node)
- 
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
 	#NodeJS is not installed
