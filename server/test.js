@@ -2,7 +2,7 @@
 
 "use strict";
 
-function power (x) {
+function power(x) {
     return x * x;
 }
 
