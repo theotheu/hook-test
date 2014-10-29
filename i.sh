@@ -2,12 +2,13 @@
 
 git checkout development
 
-echo "\n// `date`" >> server/test.js
+echo "" >> server/test.js
+echo "// `date`" >> server/test.js
 echo "function fn`date +%Y%m%d%H%i%s`(){}" >> server/test.js
 
-#git commit -am "DEVELOPMENT: `date`"
+git commit -am "DEVELOPMENT: `date`"
 
-#git push origin development
+git push origin development
 
 git checkout test
 
