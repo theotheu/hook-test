@@ -1,17 +1,12 @@
 #!/bin/sh
 
-# Get parent process
-PARENT=`ps -ocommand= -p $PPID | awk -F/ '{print $NF}' | awk '{print $1}'`
-
-echo "PARENT: $PARENT"
-exit 0
-
-
-# find node
-NODE=$(which node)
-JSLINT=./test/static-analyzer/node_modules/jslint
-BRANCH=`git branch | awk '/\*/ { print $2; }'`
-DEV=development
+# vars we need
+export NODE=/usr/local/bin/node
+export JSLINT=./test/static-analyzer/node_modules/jslint
+export BRANCH=`git branch | awk '/\*/ { print $2; }'`
+export DEV=development
+export PATH=$PATH:/usr/local/bin
+export TERM=xterm
 
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
@@ -30,23 +25,34 @@ fi
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-
+#
 if [ $BRANCH = $DEV ]; then
 	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
 else
 	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
-fi
 
-for file in $(git diff --name-only --cached | egrep '.js$');
-do
-	echo "Verifying file $file"
-	$NODE $JSLINT/bin/jslint.js $file
-	if [ $? -ne 0 ]; then
-		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+	cd ./test/static-analyzer
+	./run_lint.sh
+	cd -
+
+	if [ -f ./test/static-analyzer/error_log.txt ]; then
 		exit 1
 	fi
-done
+fi
+
+
+
+
+#for file in $(git diff --name-only --cached | egrep '.js$');
+#do
+#	echo "Verifying file $file"
+#	$NODE $JSLINT/bin/jslint.js $file
+#	if [ $? -ne 0 ]; then
+#		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+#		exit 1
+#	fi
+#done
 
 # Everything is ok
 exit 0

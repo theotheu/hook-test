@@ -1,3 +1,4 @@
+#!/bin/sh
 clear
 
 ### Check for errors; abandon the process if error exist
@@ -8,7 +9,7 @@ function checkError {
 }
 
 echo "*** LintRoller on /app/... ***"
-node Lint-Runner.js
+$(which node) Lint-Runner.js
 checkError $?
 
 ### Exit successfully
