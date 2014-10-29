@@ -27,11 +27,13 @@ fi
 # Only commit to test, if static analysis is passed
 #
 if [ $BRANCH = $DEV ]; then
-	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
+#	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
 	exit 0
 else
-	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
+#	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 
+	rm ./test/static-analyzer/error_log.txt
+	
 	cd ./test/static-analyzer
 	./run_lint.sh
 	cd -
