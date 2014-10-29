@@ -1,3 +1,6 @@
+/*jslint node:true */
+
+"use strict";
 
 function power(x) {
 	return x * x;
@@ -81,3 +84,5 @@ function fn2014102920i1414610695(){}
 
 // wo 29 okt 2014 20:26:59 CET
 function fn2014102920i1414610819(){}
+
+function fn2014102921i1414613122(){}
