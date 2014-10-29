@@ -39,6 +39,7 @@ else
 	cd -
 
 	if [ -f ./test/static-analyzer/error_log.txt ]; then
+		echo "=~=~=~=~= ERRORS ERRORS ERRORS =~=~=~=~=";
 		exit 1
 	fi
 fi
