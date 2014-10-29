@@ -44,9 +44,6 @@ else
 	fi
 fi
 
-echo "SHOULD NOT BE HERE, EVER"
-
-
 #for file in $(git diff --name-only --cached | egrep '.js$');
 #do
 #	echo "Verifying file $file"
