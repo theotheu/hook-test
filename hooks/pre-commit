@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Get parent process
+PARENT=`ps -ocommand= -p $PPID | awk -F/ '{print $NF}' | awk '{print $1}'`
+
+echo "PARENT: $PARENT"
+exit 0
+
+
 # find node
 NODE=$(which node)
 JSLINT=./test/static-analyzer/node_modules/jslint
