@@ -37,15 +37,21 @@ fi
 #	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 #fi
 
-for file in $(git diff --name-only --cached | egrep '.js$');
-do
-	echo "Verifying file $file"
-	$NODE $JSLINT/bin/jslint.js $file
-	if [ $? -ne 0 ]; then
-		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
-		exit 1
-	fi
-done
+
+cd test/static-analyser
+./run_lint.sh
+
+echo "====== $?"
+
+#for file in $(git diff --name-only --cached | egrep '.js$');
+#do
+#	echo "Verifying file $file"
+#	$NODE $JSLINT/bin/jslint.js $file
+#	if [ $? -ne 0 ]; then
+#		echo "*** ERROR *** : JSLint failed for file: $file, please fix code and recommit"
+#		exit 1
+#	fi
+#done
 
 # Everything is ok
 exit 0
