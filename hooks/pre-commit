@@ -1,16 +1,12 @@
 #!/bin/sh
 
-# Get parent process
-PARENT=`ps -ocommand= -p $PPID | awk -F/ '{print $NF}' | awk '{print $1}'`
-
-
-
-
 # vars we need
-NODE=/usr/local/bin/node
-JSLINT=./test/static-analyzer/node_modules/jslint
-BRANCH=`git branch | awk '/\*/ { print $2; }'`
-DEV=development
+export NODE=/usr/local/bin/node
+export JSLINT=./test/static-analyzer/node_modules/jslint
+export BRANCH=`git branch | awk '/\*/ { print $2; }'`
+export DEV=development
+export PATH=$PATH:/usr/local/bin
+export TERM=xterm
 
 # if it cannot find a node installation
 if [[ -z $NODE ]]; then
@@ -38,10 +34,15 @@ fi
 #fi
 
 
-cd test/static-analyzer
+cd ./test/static-analyzer
 ./run_lint.sh
+cd -
 
-echo "====== $?"
+if [ -f ./test/static-analyzer/error_log.txt ]; then
+	echo "ERRRORSRRSRS"
+	exit 1
+fi
+
 
 #for file in $(git diff --name-only --cached | egrep '.js$');
 #do
