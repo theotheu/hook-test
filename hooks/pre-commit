@@ -26,22 +26,23 @@ fi
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
 #
-#if [ $BRANCH = $DEV ]; then
-#	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
-#	exit 0
-#else
-#	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
-#fi
+if [ $BRANCH = $DEV ]; then
+	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
+	exit 0
+else
+	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
 
+	cd ./test/static-analyzer
+	./run_lint.sh
+	cd -
 
-cd ./test/static-analyzer
-./run_lint.sh
-cd -
-
-if [ -f ./test/static-analyzer/error_log.txt ]; then
-	echo "ERRRORSRRSRS"
-	exit 1
+	if [ -f ./test/static-analyzer/error_log.txt ]; then
+		echo "ERRRORSRRSRS"
+		exit 1
+	fi
 fi
+
+
 
 
 #for file in $(git diff --name-only --cached | egrep '.js$');
