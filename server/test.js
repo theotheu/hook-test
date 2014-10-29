@@ -242,7 +242,14 @@ function fn2014102921i1414613802() {
 }
 
 // wo 29 okt 2014 21:17:00 CET
+<<<<<<< HEAD
 function fn2014102921i1414613820() {
     console.log(true);
 }
 
+=======
+function fn2014102921i1414613820(){}
+
+// wo 29 okt 2014 21:26:32 CET
+function fn2014102921i1414614392(){}
+>>>>>>> development
