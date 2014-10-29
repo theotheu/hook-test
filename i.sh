@@ -14,7 +14,10 @@ git merge --no-edit development
 git commit -am "MERGE: `date`"
 
 if [ -f ./test/static-analyzer/error_log.txt ]; then
-	echo "=~=~=~=~= ERRORS ERRORS ERRORS =~=~=~=~=";
+	echo "=~=~=~=~= ERRORS: No commit for branch 'test' was performed. =~=~=~=~=";
+	echo "=~=~=~=~= Resolve the conflicts before continueing.          =~=~=~=~=";
+	echo "=~=~=~=~= Going back to branch 'development'                 =~=~=~=~=";
+        git checkout development
 	exit 1
 fi
 
