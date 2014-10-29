@@ -3,12 +3,11 @@
 # Get parent process
 PARENT=`ps -ocommand= -p $PPID | awk -F/ '{print $NF}' | awk '{print $1}'`
 
-echo "PARENT: $PARENT"
-exit 0
 
 
-# find node
-NODE=$(which node)
+
+# vars we need
+NODE=/usr/local/bin/node
 JSLINT=./test/static-analyzer/node_modules/jslint
 BRANCH=`git branch | awk '/\*/ { print $2; }'`
 DEV=development
@@ -30,13 +29,13 @@ fi
 
 # Commit and push always to development
 # Only commit to test, if static analysis is passed
-
-if [ $BRANCH = $DEV ]; then
-	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
-	exit 0
-else
-	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
-fi
+#
+#if [ $BRANCH = $DEV ]; then
+#	echo "\n\n\nCurrent branch is $BRANCH. This will be committed.\n\n\n"
+#	exit 0
+#else
+#	echo "\n\n\nCurrent branch is $BRANCH. This will be tested.\n\n\n"
+#fi
 
 for file in $(git diff --name-only --cached | egrep '.js$');
 do
