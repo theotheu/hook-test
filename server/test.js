@@ -8,6 +8,5 @@ function power(x) {
 
 console.log(power(2));
 
-
 power(3);
 
