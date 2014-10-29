@@ -38,7 +38,7 @@ fi
 #fi
 
 
-cd test/static-analyser
+cd test/static-analyzer
 ./run_lint.sh
 
 echo "====== $?"
