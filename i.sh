@@ -13,6 +13,11 @@ git checkout test
 git merge --no-edit development
 git commit -am "MERGE: `date`"
 
+if [ -f ./test/static-analyzer/error_log.txt ]; then
+	echo "=~=~=~=~= ERRORS ERRORS ERRORS =~=~=~=~=";
+	exit 1
+fi
+
 #git merge --commit -m "MERGE: `date`" development
 
 #git commit -am "TEST: `date`"
