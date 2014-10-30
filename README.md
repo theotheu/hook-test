@@ -2,8 +2,21 @@ test
 
 // dev
 
-https://gist.github.com/pgpbpadilla/9999991
-
 `ln -s hooks/pre-commit .git/hooks.pre-commit`
 
 `chmod +x .git/hooks.pre-commit`
+
+
+##Flows
+The following branches are used in this example:
+* development
+  * In this branch is the code for actual development. Can always be committed and push, even _with_ errors. In fact, there is no validation forced.
+* test
+  * The test stage. All files will be validated with `jslint`, `jshint` and `esprima`.
+  * Commit and push is only possible with valid files.
+  * The configuration is in directory test/static-analyzer.
+* master
+  * This branch is used for production code.
+
+##Usage
+**Do not use the `git` commands from your ide.**
