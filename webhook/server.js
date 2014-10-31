@@ -16,7 +16,16 @@ app.use(bodyParser.urlencoded({extended: true}));     // Notice because option d
 app.get('/webhook', function (req, res) {
     if (req.body.repository.url === 'https://github.com/theotheu/hook-test') {
         console.log('>>>>>req', req.body, '<<<<<<');
-        console.log('Now checkout the repo');
+        console.log('Now do a git pull');
+
+        // executes `git pull`
+        child = exec("git pull", function (error, stdout, stderr) {
+            sys.print('stdout: ' + stdout);
+            sys.print('stderr: ' + stderr);
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+        });
     }
     res.send({});
 });
