@@ -23,3 +23,4 @@ The following branches are used in this example:
 
 If you use the git commands from your IDE, then you have to commit, merge and push for each branch separately.
 
+
