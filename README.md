@@ -1,6 +1,4 @@
-test
 
-// dev
 
 `ln -s hooks/pre-commit .git/hooks.pre-commit`
 
@@ -22,4 +20,10 @@ The following branches are used in this example:
 **Do not use the `git` commands from your IDE.**
 
 If you use the git commands from your IDE, then you have to commit, merge and push for each branch separately.
+
+
+![Github web configuration](https://raw.githubusercontent.com/theotheu/hook-test/master/assets/github-webhooks.png)
+
+
+
 
